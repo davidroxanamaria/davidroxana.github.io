@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ro">	
+		<title>P& D online shop</title>
+		<!--<link rel="shortcut icon" type="image/png" href="F:\AN_3\semestru 2\Programare Web\Laborator\imagini\logos\logo-2.png" />-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="body.css" type="text/css">
+		<link rel="stylesheet" href="menu.css" type="text/css">
+		<link rel="stylesheet" href="header.css" type="text/css">
+		<link rel="stylesheet" href="footer.css" type="text/css">
+		<link rel="stylesheet" href="login.css" type="text/css">
+	
+		<script type="text/javascript" src ="functii.js">
+			
+		</script>
+		<script type="text/javascript" src ="input.js">
+			
+		</script>
+	 <body> 
+	 <a id="top"></a>
+	  <!-- Header -->
+	<header class="header">
+	
+		<h5 style = "text-align:center;"><i>Livrare gratuita la comenzi peste 400 de lei</i></h5>
+		<div class="text">
+			<h1 class="firstLine"><b>Wear</b></h1>
+			<h6>your <span class="casutaBest">BEST</span></h6></div>
+			<h4 style="text-align: right; font-weight:bold;"><a href="login.html">Log in <img style="width:2.5%" alt="d" src="icons8-login-as-user-80.png"></a></h4>
+
+</header>
+		
+	<div class="container">
+	<div>
+		<input type="checkbox" id="toggle">
+		<label for="toggle" >&#9776;</label>
+		<nav  class="vertical-menu"><br>
+
+		<ul  class="menu" id ="list">
+		<li><a href="homePage.html"><img src="logo-2.png" alt="Alternative Text" height="100" width="150"  ></a>
+</li>
+		<li><a href="#">Noua colectie</a></li>
+		<li><a href=""> Femei </a>
+			<ul class="submenu">
+				<li><a href="femei.html"> Vezi toate produsele </a></li>
+				<li><a href="botine.html"> Botine </a></li>
+				<li><a href="pantofi.html"> Pantofi </a></li>
+				<li><a href="femei.html"> Bocanci </a></li>
+			</ul>
+		</li>
+		<li><a href="#" > Barbati </a>	</li>		
+		<li><a href="despreNoi.html"> Despre noi</a></li>
+		<li><a href="contact.html"> Contact </a></li>
+		<li><a href="Clienti.html"> Clienti</a></li>
+		</ul>
+	</nav>
+		</div>
+	 </div>
+	
+
+		
+	<main >
+		<article>
+		<h2 style="text-align: center"><i class="casutaBest"> Formular de retur/Comanda</i></h2>
+		
+		</article>
+		<form  action="homePage.html" >
+		<fieldset>
+		<legend><strong class="casutaBest">DATE DE CONTACT</strong></legend>
+				<br><input type="text" name="text" maxlength="50" placeholder="Nume">
+				<input placeholder="Prenume" type="text" name="text" maxlength="50" ><br><br>
+				<br><input placeholder="Email" id="emailc" type="text" name="emailR" onkeyup="validateEmail(document.getElementById('emailc'),document.getElementById('bullet6'),document.getElementById('sub'))"  required /><span id="bullet6" class="dot_white"></span>
+
+				<input id="tel" type="text" name="text" placeholder="Numar telefon" onkeyup="validateNrTel(document.getElementById('tel'),document.getElementById('bullet7'),document.getElementById('sub'))"  required /><span id="bullet7" class="dot_white"></span><br><br>
+				<input type="text"  name="tara" value="Romania" readonly>
+				Judet:<select class="select" name= "judet" id="judetSelectat" size = "1" onchange="dropdownlist(document.getElementById('judetSelectat'))">
+					<option value ="" disabled selected>Selectati un judet</option>	
+					
+				</select><br><br>
+				Localitate:<select class="select" id="orasSelectat">
+					<option value ="" disabled selected>Selectati o localitate</option>	
+				</select>
+				<input placeholder="Adresa" type="text" name="text"  maxlength="50" >
+			<br><br>
+				</fieldset><fieldset><legend><strong class="casutaBest">PRODUSE COMANDATE</strong></legend><br>
+		<textarea name="textlung" cols="250" rows="25" >
+			Va rugam sa completati aici produsele pentru care se doreste returul alaturi de motivul returului pentru fiecare produs in parte. 
+			</textarea>
+			<br><label for="files">Optional incarcati poze cu produsele:</label>
+			<input type="file" id="files" name="files" multiple><br><br>
+		</fieldset>
+	
+			<fieldset>
+			<legend><strong class="casutaBest">Alegeti o optiune</strong></legend>
+		
+			  <select class="select" name="opt">
+				<option value="0">Inlocuirea produsului</option>
+				<option value="1">Achizitionarea altor produse in contrapartida</option>
+				<option value="2">Doresc sa primesc banii inapoi prin transfer bancar </option>
+				<option value="3">Doresc sa altcv...</option> 
+			</select>
+		</fieldset>	
+
+			<br><fieldset>
+			
+			<legend><strong class="casutaBest">Alegeti data de preluare a coletului</strong></legend>
+				<br><input type="text" id="dat" name="date" onkeyup="validateDate(document.getElementById('dat'),document.getElementById('bullet10'),document.getElementById('sub'), 'zz/ll/aaaa')"  required /><span id="bullet10" class="dot_white"></span><br><br>
+			</fieldset>
+			<fieldset>
+			<legend><strong class="casutaBest">Date bancare</strong></legend>
+			<br><input placeholder="Titular cont bancar" type="text" name="text"  maxlength="50" >
+			<input placeholder=" Cod Iban" type="text" name="text"  maxlength="50" >
+			<br><br>
+			
+			<details>
+			<summary>In caz de vreo eroare a trimiterii emailului procedati astfel</summary>
+			<p>Suna la nr de telefon 078945612</p>
+			</details><br><br>
+
+			<button type="submit" id="sub" value="Submit"><span>Trimite cererea</span></button> 
+			<button type="reset" value="Reset" onClick="resetAll()">Reset</button>
+
+	</form>	<a id="down"></a>
+	
+	<div style="height:100%;padding-bottom:2;" >
+		  <h2 style="text-align:right"><a href="#top"><span class="casutaBest"><img src="up.png" alt="d">To the top</span></a></h2>
+	</div>
+	<br> <br>
+	 
+	 <!-- Footer -->
+	<footer class="footer" >
+		  <div >			
+			<h4>Info</h4>
+			<p>adresa-email@yahoo.com</p>
+			<p>adresa magazin fizic</p>
+			<p >numar telefon</p><br>
+			
+      </div>
+ 
+	</footer>
+</body>
+</html>

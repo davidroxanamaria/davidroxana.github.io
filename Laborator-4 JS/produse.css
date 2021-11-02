@@ -1,0 +1,104 @@
+.grid {
+  text-align: center;
+	width:100%;
+  border-spacing: 0;
+  border-collapse: separate;
+ 
+}
+.grid tr, td{
+	 border: 1px solid #ccc;
+}
+.grid td {
+  position: relative;
+  max-width: 150px;
+  max-height: 150px;
+  text-align: center;
+}
+
+.list li:hover .overlay{
+	opacity: 1;
+}
+
+
+.overlay {
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+
+  background-color: #000;
+
+  z-index: 1000;
+}
+
+.grid td:hover .overlay {
+  opacity: 1;
+}
+
+.text1 {
+	 background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700|Lato);
+.rt-container{
+	position:relative;
+	left:20%;
+	width:70%;
+}
+
+.hidden1 img{
+  display: none;
+}
+
+.sliderContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.showimg{
+  position: relative;
+}
+
+
+
+#previousImage, #nextImage{
+  position: absolute;
+  overflow: hidden;
+  z-index: 100;
+  top: 40%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 60px;
+  color: black;
+}
+
+#previousImage{
+  left: -40px;
+}
+
+#nextImage{
+  float: right;
+  right: -40px;
+}
+#nrOfSeconds{
+	width:50px;
+}

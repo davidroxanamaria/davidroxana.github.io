@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ro">	
+		<title>P& D online shop</title>
+		<!--<link rel="shortcut icon" type="image/png" href="F:\AN_3\semestru 2\Programare Web\Laborator\imagini\logos\logo-2.png" />-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="body.css" type="text/css">
+		<link rel="stylesheet" href="menu.css" type="text/css">
+		<link rel="stylesheet" href="header.css" type="text/css">
+		<link rel="stylesheet" href="footer.css" type="text/css">
+		<link rel="stylesheet" href="produse.css" type="text/css">
+		<script type="text/javascript" src ="functii.js">
+			
+		</script>
+			
+	 <body > 
+	 <a id="top"></a>
+	  <!-- Header -->
+	<header class="header">
+	
+		<h5 style = "text-align:center;"><i>Livrare gratuita la comenzi peste 400 de lei</i></h5>
+		<div class="text">
+			<h1 class="firstLine"><b>Wear</b></h1>
+			<h6>your <span class="casutaBest">BEST</span></h6></div>
+			<h4 style="text-align: right; font-weight:bold;"><a href="login.html">Log in <img alt="d" style="width:2.5%" src="icons8-login-as-user-80.png"></a></h4>
+</header>
+		
+	<div class="container">
+	<div>
+		<input type="checkbox" id="toggle">
+		<label for="toggle" >&#9776;</label>
+		<nav  class="vertical-menu"><br>
+
+		<ul  class="menu">
+		<li><a href="homePage.html"><img src="logo-2.png" alt="Alternative Text" height="100" width="150"  ></a>
+</li>
+		<li><a href="#">Noua colectie</a></li>
+		<li><a href=""> Femei </a>
+			<ul class="submenu">
+				<li><a href="femei.html"> Vezi toate produsele </a></li>
+				<li><a href="botine.html"> Botine </a></li>
+				<li><a href="pantofi.html"> Pantofi </a></li>
+				<li><a href="femei.html"> Bocanci </a></li>
+			</ul>
+		</li>
+		<li><a href="#" > Barbati </a>	</li>		
+		<li><a href="#"> Despre noi</a></li>
+		<li><a href="contact.html"> Contact </a></li>
+		<li><a href="Clienti.html"> Clienti</a></li>
+		</ul>
+	</nav>
+		</div>
+	 </div>
+	<main >
+	<br>
+	<button type="button" class ="casutaBest" onclick="prev()">Prev</button>
+	<button type="button" class ="casutaBest" onclick="next()">Next</button>
+	<ol id = "list">
+			<li class = "box1"  ><div>Filozofia de brand</div><a href ="https://www.tezyo.ro/despre-tezyo" style=" color: red;"target = "_blank">Read more</a></li>
+			<li class = "box1"><div>Misiunea magazinului este de a deveni prima alegere a consumatorilor în ceea ce privește articolele de încălțăminte, accesoriile, marochinăria și produsele de întreținere. Totodată, Tezyo și-a propus să devină consultantul de stil al clienților săi.</div>
+				<a href ="https://www.cs.ubbcluj.ro/files/orar/2020-2/grafic/MI3.html" style=" color: red;">Read more</a></li>
+			<li class = "box1"><div>Viziunea magazinului este de a oferi oricărei persoane posibilitatea de a-și defini un stil vestimentar propriu.</div>
+				<a href ="https://www.cs.ubbcluj.ro/files/orar/2020-2/grafic/MI3.html" style=" color: red;">Read more</a></li>
+			<li id="id3" class="box1"><div> Printre valorile magazinului se numără calitatea, autenticitatea și confortul. </div>
+				<a href ="https://www.cs.ubbcluj.ro/files/orar/2020-2/grafic/MI3.html" style=" color: red;">Read more</a></li>
+		
+			</ol>
+				
+					<script>
+			var ord = document.getElementById("list");
+			var lista = ord.getElementsByTagName("LI");
+			for(var i = 1; i < lista.length; i ++)
+			{
+				lista[i].classList.add('visuallyhidden');
+				lista[i].classList.add('hiddenli');
+			}
+			var i = 1;
+			function show(index)
+			{
+				if(index == 0)
+				{
+					lista[(lista.length - 1)].classList.add('visuallyhidden');
+					setTimeout(function () {
+					  lista[(lista.length - 1)].classList.add('hiddenli');
+					}, 2000);
+				}
+				else
+				{
+					lista[index - 1].classList.add('visuallyhidden');		
+					setTimeout(function () {
+					  lista[index - 1].classList.add('hiddenli');
+					}, 2000);
+				}
+				lista[index].classList.remove('hiddenli');
+				setTimeout(function () {
+				  lista[index].classList.remove('visuallyhidden');
+				}, 2000);
+				
+			}
+
+			var id = setInterval(function () {console.log(i); show(i); i++;
+				if (i >= lista.length)
+				{
+					i = 0;
+				}}, 4000);
+
+			var nextClicked = 1;
+
+			function next(){
+				clearInterval(id);
+				if(i == 0){
+					lista[(lista.length - 1)].classList.add('visuallyhidden');
+					lista[(lista.length - 1)].classList.add('hiddenli');
+				}
+				else{
+					lista[i - 1].classList.add('visuallyhidden');
+					lista[i - 1].classList.add('hiddenli');
+				}
+				lista[i].classList.remove('hiddenli');
+				lista[i].classList.remove('visuallyhidden');
+				nextClicked = 1;
+				i = i + 1;
+				if (i >= lista.length)
+				{
+					i = 0;
+				}
+				id = setInterval(function () {console.log(i); show(i); i++;
+					if (i >= lista.length){
+						i = 0;
+					}},4000);
+			}
+
+			function prev(){
+				clearInterval(id);
+				if(nextClicked == 1)
+				{
+					i = i - 2;
+					nextClicked = 0;
+				}
+				else
+				{
+					i = i - 1;
+				}
+				if(i < 0)
+				{
+					i = lista.length - 1;
+				}
+				if(i == lista.length - 1){
+					lista[0].classList.add('visuallyhidden');
+					lista[0].classList.add('hiddenli');
+				}
+				else{
+					lista[i + 1].classList.add('visuallyhidden');
+					lista[i + 1].classList.add('hidden');
+				}
+				lista[i].classList.remove('hiddenli');
+				lista[i].classList.remove('visuallyhidden');
+				id = setInterval(function () {console.log(i); show(i); i++;
+					if (i >= lista.length){
+						i = 0;
+					}}, 4000);
+			}
+		
+		</script>
+	
+	<h3  style="text-align: center"><i class = "casutaBest"> Furnizori si branduri partenere</i></h3>
+		<table id="sorttable1" style="margin-left: auto;margin-right: auto;">
+			<tr><th data-type = "Number" onclick="sortareTabel(0, document.getElementById('sorttable1'),'numar','asc')">Numar crt</th><th onclick="sortareTabel(1, document.getElementById('sorttable1'),'string','asc')">Nume companie</th><th onclick="sortareTabel(2, document.getElementById('sorttable1'),'string','desc')">Tara</th><th onclick="sortareTabel(3, document.getElementById('sorttable1'),'numar','desc')">An infiintare</th></tr>
+			<tr><td>1</td><td>Epica</td><td>Brazilia</td><td>2004</td></tr>
+			<tr><td>2</td><td>Atom</td><td>Portugalia</td><td>2016</td></tr>
+			<tr><td>3</td><td>Marco Tozzi</td><td>Spania</td><td>2012</td></tr>
+			<tr><td>4</td><td>Tamaris</td><td>Portugalia</td><td>2011</td></tr>
+			<tr><td>5</td><td>Ara</td><td>Germania</td><td>2013</td></tr>
+			<tr><td>6</td><td>Otter</td><td>Germania</td><td>2005</td></tr>
+			<tr><td>7</td><td>Pass</td><td>Polonia</td><td>2015</td></tr>
+			<tr><td>8</td><td>Gucci</td><td>Italia</td><td>1995</td></tr>
+			<tr><td>9</td><td>Versace</td><td>Italia</td><td>1987</td></tr>
+			<tr><td>10</td><td>Channel</td><td>Franta</td><td>1970</td></tr>
+			<tr><td>11</td><td>Nike</td><td>Canada</td><td>1999</td></tr>
+			<tr><td>12</td><td>Adidas</td><td>SUA</td><td>1995</td></tr>
+			<tr><td>13</td><td>Picolinos</td><td>Spania</td><td>2002</td></tr>
+			<tr><td>14</td><td>Pitilios</td><td>Mexic</td><td>2000</td></tr>
+			<tr><td>15</td><td>Guban</td><td>Romania</td><td>2004</td></tr>
+			<tr><td>16</td><td>Ara sport</td><td>Germania</td><td>2010</td></tr>
+			<tr><td>17</td><td>S'Oliver</td><td>Spania</td><td>2012</td></tr>
+			<tr><td>18</td><td>HM</td><td>Canada</td><td>2001</td></tr>
+			<tr><td>19</td><td>Denis</td><td>Romania</td><td>2000</td></tr>
+			<tr><td>20</td><td>Ana Cori</td><td>Romania</td><td>2002</td></tr>
+		</table>
+	
+		</main>
+	 <h2 style="text-align:right"><a href="#top"><span class="casutaBest"><img alt="d" src="up.png">To the top</span></a></h2>
+	 
+	 <!-- Footer -->
+	<footer class="footer" >
+		  <div >
+			<h4>Info</h4>
+			<p>adresa-email@yahoo.com</p>
+			<p>adresa magazin fizic</p>
+			<p >numar telefon</p><br>
+			
+      </div>
+ 
+	</footer>
+</body>
+</html>

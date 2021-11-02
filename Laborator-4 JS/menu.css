@@ -1,0 +1,147 @@
+
+.vertical-menu{
+	position:absolute;
+	top: 60px;
+	bottom: 0;
+	width: 0;
+	background-color: #ffff;
+	
+	display: block;
+	text-align:center;  
+	animation:animateleft 0.4s;	
+
+   
+    overflow: hidden;
+	 padding-bottom: 100%;
+	z-index: 9;
+	transition:  .5s ease-out;
+}
+
+
+a{
+	color:black
+}
+
+.vertical-menu a:hover {
+  background-color: #ffe4e1;
+  border-right: 5px solid black
+}
+
+.menu, .submenu{
+	list-style: none;
+}
+
+.hide{
+     display: none;
+	height: 0;
+	overflow: hidden;
+	
+}
+.is-visible {
+	display: block;
+	height: auto;
+	
+	transition: height 3s ease-in-out; 
+}
+.menu a{
+  background-color: #ffff; 
+  display: block; 
+  padding: 20px; 
+  text-decoration: none; /* nu mai sublineaza link-urile */
+}
+
+
+.vertical-menu ul li:hover >ul{
+	float:left;
+	left: 200px;
+	top:350px;
+	height: 100%;
+	position: fixed;
+	 -webkit-transition: left 200ms ease-in; /* pentru safari si chrome*/
+	  -moz-transition: left 200ms ease-in;   /*pentru firefox*/
+	transition: left 200ms ease-in;
+}
+
+.submenu  {
+	overflow: hidden;
+	max-height: 0;
+}
+
+.menu li:hover .submenu {
+  display: block;
+  max-height: 500px;
+}
+
+
+.container{
+	height:100%;
+	position:relative;
+}
+
+.container div{
+	display: flex;
+	height: 60px;
+	background: #fff;
+	box-shadow: 0 2px 3px #ffe4e1;
+	
+}
+
+.container div label{
+	font-size: 2.3em;
+	height: 100%;
+	width: 60px;
+	line-height: 60px;
+	text-align: center;
+	cursor: pointer;
+	transition: .5s ease-out;
+	
+	
+}
+.container div label:hover{
+	color: #000;
+	background: red; 
+}
+
+.container nav ul li a{
+		display: flex;
+		align-items: center;
+		text-align:center;
+		font-family:arial;
+		font-size: 1.2em;
+		font-weight:bold;
+		text-decoration: none;
+		padding: 10px 30px;
+		height:50px;
+		text-indent: 50px;
+		line-height: 1.8;
+		}
+
+
+input[type=checkbox]{
+display:none;}
+
+input[type=checkbox]:checked ~ nav{
+width: 250px}
+
+ul#listCarousel li{
+  list-style-type: none;
+}
+
+ul#listCarousel li:not(#displayer){
+  display: none;
+}
+#displayer a{
+  color: red;
+}
+
+.hiddenli {
+		  display: none;
+		}
+
+.visuallyhidden {
+opacity: 0;
+}
+.box1 {
+		  transition: all 350ms linear;
+		  display: block;
+		}

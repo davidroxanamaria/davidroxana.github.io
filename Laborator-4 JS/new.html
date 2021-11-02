@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset = "utf-8">
+    <style>
+        .red {
+            background-color: red;
+        }
+    </style>
+    </head>
+    <body>
+        <form id="myForm">
+        <input type="text" id="validate" class=""/>
+        </form>
+    <script>
+    function pressHandler(e) {
+	 var pattern = /^[a-z0-9]+$/;
+    if(pattern.test(textInput.value))
+        console.log(this.value);
+        {
+            this.className = "red";
+        } else {
+            this.className = "";
+        }
+    }
+
+    document.getElementById("validate").addEventListener("keyup",pressHandler);
+    </script>
+
+    </body>
+</html>

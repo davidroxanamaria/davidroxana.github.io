@@ -1,0 +1,17 @@
+.footer {
+ position:flex;
+   left:0px;
+   bottom:0px;
+	display: inline-block;
+   width:100%;
+
+ background-color: black;
+  color: white;
+  text-align: center;
+
+}
+.footer div{
+width:30%;}
+
+.footer a{
+color: white}

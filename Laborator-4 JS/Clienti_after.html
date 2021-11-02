@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ro">	
+	<head>
+		<title>P& D online shop</title>
+		<!--<link rel="shortcut icon" type="image/png" href="F:\AN_3\semestru 2\Programare Web\Laborator\imagini\logos\logo-2.png" />-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="body.css">
+		<link rel="stylesheet" href="menu.css">
+		<link rel="stylesheet" href="header.css">
+		<link rel="stylesheet" href="footer.css">
+		<link rel="stylesheet" href="login.css" type="text/css">
+		<script type="text/javascript" src ="functii.js">
+			
+		</script>
+	</head>
+	 <body> 
+	 <a id="top"></a>
+	  <!-- Header -->
+	<header class="header">
+	
+		<h5 style = "text-align:center;"><i>Livrare gratuita la comenzi peste 400 de lei</i></h5>
+		<div class="text">
+			<h1 class="firstLine"><b>Wear</b></h1>
+			<h6>your <span class="casutaBest">BEST</span></h6></div>
+			<h4 style="text-align: right; font-weight:bold;"><a href="Clienti.html">Log out <img alt="d" style="width:2.5%" src="icons8-login-as-user-80.png"></a></h4>
+</header>
+		
+	<div class="container">
+	<div>
+		<input type="checkbox" id="toggle">
+		<label for="toggle" >&#9776;</label>
+		<nav  class="vertical-menu"><br>
+
+		<ul  class="menu">
+		<li><a href="homePage_after.html"><img src="logo-2.png" alt="Alternative Text" height="100" width="150"  ></a>
+</li>
+		<li><a href="#">Noua colectie</a></li>
+		<li><a href=""> Femei </a>
+			<ul class="submenu">
+				<li><a href="femei_after.html"> Vezi toate produsele </a></li>
+				<li><a href="femei.html"> Botine </a></li>
+				<li><a href="femei.html"> Pantofi </a></li>
+				<li><a href="femei.html"> Bocanci </a></li>
+			</ul>
+		</li>
+		<li><a href="#" > Barbati </a>	</li>		
+		<li><a href="despreNoi.html"> Despre noi</a></li>
+		<li><a href="contact_after.html"> Contact </a></li>
+		<li><a href="Clienti_after.html"> Clienti</a></li>
+		</ul>
+	</nav>
+		</div>
+	 </div>
+	
+  
+
+	<main>
+
+		<article>
+		<h2 style="text-align: center"><i class="casutaBest"> Formular de retur/Comanda</i></h2>
+		<p> Pentru a returna unul sau mai multe produse clientul trebuie sa completeze urmatorul formular.</p>
+		<ol>
+			<li>Returul se face cu preluarea coletului de la adresa clientului.</li>
+			<li>Returul se face într-un termen maxim de 14 zile calendaristice de la primirea coletului.</li>
+			<li>După verificarea articolelor returnate, suma facturată va fi restituită prin metoda de plată pe care ai folosit-o inițial. Te rugăm să returnezi articolele în starea în care le-ai primit și în cutiile cu care au fost livrate pentru a ajuta la transportarea în siguranță a produselor.</li>
+		</ol>
+		</article>
+		<form  action="homePage_after.html" >
+		<fieldset>
+		<legend><strong class="casutaBest">DATE DE CONTACT</strong></legend>
+				<br><input type="text" name="text" maxlength="50" placeholder="Nume">
+				<input placeholder="Prenume" type="text" name="text" maxlength="50" ><br><br>
+				<br><input placeholder="Email" type="text" name="text" maxlength="50" >
+				<input type="text" name="text" maxlength="10" placeholder="Numar telefon"><br><br>
+				<input type="text"  name="tara" value="Romania" readonly>
+				<input type="text"  name="tara" value="Romania" readonly>
+				Judet:<select class="select" name= "judet" id="judetSelectat" size = "1" onchange="dropdownlist(document.getElementById('judetSelectat'))">
+					<option value ="" disabled selected>Selectati un judet</option>	
+					
+				</select><br><br>
+				Localitate:<select class="select" id="orasSelectat">
+					<option value ="" disabled selected>Selectati o localitate</option>	
+				</select>
+				<input placeholder="Adresa" type="text" name="text"  maxlength="50" >
+			<br><br>
+				</fieldset><fieldset><legend><strong class="casutaBest">PRODUSE COMANDATE</strong></legend><br>
+		<textarea name="textlung" cols="250" rows="25" >
+			Va rugam sa completati aici produsele pentru care se doreste returul alaturi de motivul returului pentru fiecare produs in parte. 
+			</textarea>
+			<br><label for="files">Optional incarcati poze cu produsele:</label>
+			<input type="file" id="files" name="files" multiple><br><br>
+		</fieldset>
+</form><form >		
+			<fieldset>
+			<legend><strong class="casutaBest">Alegeti o optiune</strong></legend>
+		
+			  <select class="select" name="opt">
+				<option value="0">Inlocuirea produsului</option>
+				<option value="1">Achizitionarea altor produse in contrapartida</option>
+				<option value="2">Doresc sa primesc banii inapoi prin transfer bancar </option>
+				<option value="3">Doresc sa altcv...</option> 
+			</select>
+		</fieldset>	
+
+			<br><fieldset>
+			
+			<legend><strong class="casutaBest">Alegeti data de preluare a coletului</strong></legend>
+				<br><input type="date" name="date"><br><br>
+			</fieldset>
+			<fieldset>
+			<legend><strong class="casutaBest">Date bancare</strong></legend>
+			<br><input placeholder="Titular cont bancar" type="text" name="text"  maxlength="50" >
+			<input placeholder=" Cod Iban" type="text" name="text"  maxlength="50" >
+			<br><br>
+			
+			<details>
+			<summary>In caz de vreo eroare a trimiterii emailului procedati astfel</summary>
+			<p>Suna la nr de telefon 078945612</p>
+			</details><br><br>
+
+			<button type="submit" value="Submit"><span onClick="alert('Cererea a fost inregistrata!');">Trimite cererea</span></button> 
+			<button type="reset" value="Reset">Reset</button>
+		</fieldset>	
+
+	
+	</form>	
+
+			 </main>
+	 <h2 style="text-align:right"><a href="#top"><span class="casutaBest"><img alt="d" src="up.png">To the top</span></a></h2>
+	 
+	 <!-- Footer -->
+	<footer class="footer" >
+		  <div >
+			<h4>Info</h4>
+			<p>adresa-email@yahoo.com</p>
+			<p>adresa magazin fizic</p>
+			<p >numar telefon</p><br>
+			
+      </div>
+ 
+	</footer>
+</body>
+</html>
